@@ -65,14 +65,14 @@ async function generateImageWithLetsUR(prompt: string): Promise<Buffer> {
     throw new Error("LETSUR_API_KEY 환경변수가 설정되어 있지 않습니다");
   }
 
-  const response = await fetch("https://api.letsur.ai/v1/images/generations", {
+  const response = await fetch("https://gw.letsur.ai/v1/images/generations", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${apiKey}`,
+      "x-api-key": apiKey,
     },
     body: JSON.stringify({
-      model: "dall-e-3",
+      model: "gpt-image-2",
       prompt,
       size: "1024x1024",
       response_format: "b64_json",
@@ -153,7 +153,7 @@ async function main() {
             orderIndex,
             imageUrl,
             food.answer,
-            JSON.stringify(food.accepted),
+            food.accepted,
           ]
         );
       }
