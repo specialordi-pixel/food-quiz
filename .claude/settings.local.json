@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm -v)",
+      "Bash(where node *)",
+      "Bash(where npm *)",
+      "Read(//c/Program Files/nodejs/**)",
+      "Bash(psql --version)",
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(curl -s http://localhost:3001)",
+      "Bash(git config *)"
+    ]
+  }
+}
